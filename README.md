@@ -1,4 +1,4 @@
-# Air-pollution-intercity-medical-travels
+# Air_pollution_intercity_medical_travels
 This is the code site for our recent research "Regional gap in health adaptation to PM2.5 in ageing China drives persistent long-distance medical travels". 
 
 (a) calculating population weighted pm2.5 concentration at city-level for GEMM model;
