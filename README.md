@@ -9,4 +9,8 @@ This is the code site for our recent research "Regional gap in health adaptation
 
 (d) Gravity model to estimate the distribution of intercity medical travels and flows.
 
-If you have any question, please contact shiyu.deng.23@ucl.ac.uk
+(e) The figure folder contains the drawing codes for all the graphics in our research.
+
+All data from this study are available by contacting the corresponding author.
+
+
