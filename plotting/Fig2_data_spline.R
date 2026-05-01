@@ -8,14 +8,14 @@ df_raw <- read_excel(
 )
 
 df <- df_raw %>%
-  filter(HS_type2 != 0) %>%
+  filter(HS_type != 0) %>% #change HS_type to HS_type2 to delete the cities withou HS score ()
   select(HS, delta_mort, delta_mortratio) %>%
   mutate(across(everything(), as.numeric)) %>%
   filter(!is.na(HS))
 
 run_gam <- function(data, yvar, sample_label) {
   m  <- gam(reformulate("s(HS, k=20)", response = yvar),
-             data = data, method = "REML")
+            data = data, method = "REML")
   xg <- seq(min(data$HS), max(data$HS), length.out = 300)
   pr <- predict(m, newdata = data.frame(HS = xg), se.fit = TRUE)
   st <- summary(m)$s.table
