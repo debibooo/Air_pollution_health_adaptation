@@ -1,8 +1,5 @@
 
 # --Global Exposure Mortality Model (GEMM) for PM2.5 health impact assessment--#
-# author: Shiyu Deng
-# affiliation: University College London
-# email: shiyu.deng.23@ucl.ac.uk
 # date: January 2026
 #---refer to www.pnas.org/cgi/doi/10.1073/pnas.1803222115 ---#
 
@@ -70,7 +67,7 @@ BASE_MORTALITY = {
 # ── cross_region coefficient ──
 CROSS_COEF = {
     0: 1.1323,  # 25–29
-    1: 0.8160,  # 30–39  (注：原代码 max 用 0.8169，mean/min 用 0.8160，统一为 0.8160)
+    1: 0.8160,  # 30–39 
     2: 0.8160,
     3: 0.9465,  # 40–49
     4: 0.9465,
@@ -143,7 +140,7 @@ air, fer, rcp, year, dev = all_tasks[task_id]
 city_file_path ='/city_names.csv' # city names data path
 city_data=pd.read_csv(city_file_path)
 
-mobility_file_path='/data source/mobility_rate.csv' # mobility data path
+mobility_file_path='mobility_rate.csv' # mobility data path
 mobility_data=pd.read_csv(mobility_file_path)
 
 mortality = []          
