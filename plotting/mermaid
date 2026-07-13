@@ -1,0 +1,35 @@
+graph TD
+    %% 样式定义
+    classDef sectionStyle fill:#f2f5f8,stroke:#333,stroke-width:2px,font-weight:bold;
+    classDef blockStyle fill:#ffffff,stroke:#666,stroke-width:1px;
+    classDef formulaStyle fill:#eef3f7,stroke:#4a7c59,stroke-width:1px,font-family:monospace;
+
+    %% 阶段 1
+    subgraph S1 [1. Construction of Intercity Healthcare Demand & Supply Indicators]
+        A1[Online Medical Mobility <br> & Census Data <br> Alipay / Xianghubao] -->|Formula 5| B1(COPD, IHD, LRI, LC <br> Intercity Demand C_cross)
+        A2[Hospital Directory <br> & GDP Data <br> Grade 3A Selected] -->|Formulas 6-9| B2(Gravity Index b_ij <br> Medical Quality/Capacity/Decay)
+        B1 & B2 -->|Normalization Formula 11| B3[Intercity Healthcare <br> OD Matrix Construction]
+    end
+    style S1 classStyle;
+
+    %% 阶段 2
+    subgraph S2 [2. Spatial Distribution Patterns and Accessibility Modeling]
+        C1[PM2.5 Attributable Health Risk <br> Burden Analysis via GEMM] -->|Formulas 1-4| D1(City-level PM2.5 Exposure <br> & Premature Deaths Mort)
+        B3 --> C2[Competing Destination Model <br> Demand-Flow Analysis]
+        C2 --> D2(Spatial Heterogeneity <br> Inflow Authority & Clustering)
+    end
+
+    %% 阶段 3
+    subgraph S3 [3. City and Regional Roles in the National Healthcare System]
+        D1 & D2 --> E1[Destination Attractiveness <br> Profiling & Multi-source Fusion]
+        E1 --> E2[Bisecting k-means Clustering]
+        E2 --> F1([Typology of Cities: <br> Global Authority, Regional Matching, etc.])
+    end
+
+    %% 连接三个阶段
+    B3 --> C2
+    S1 --> S2 --> S3
+
+    class S1,S2,S3 sectionStyle;
+    class A1,A2,B1,B2,B3,C1,C2,D1,D2,E1,E2 blockStyle;
+    
